@@ -39,6 +39,9 @@
   animation: blink .5s infinite;
   -webkit-animation: blink .5s infinite;
   -moz-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  
 }
 .brain {
   background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
@@ -60,6 +63,7 @@
   border-right: 75px solid transparent;
   border-radius: 20px 20px 100px 100px;
 }
+
 .left {
   font-family: 'Poller One', verdana, arial, sans-serif;
   font-weight: bold;
@@ -146,30 +150,20 @@ img {
 <img src="/assets/dance_cotter.gif">
 
 <script>
-// When eyes button is clicked, toggle laser class on brain
 $(".flash").click(function() {
   $(".brain").toggleClass('laser');
 });
 
-// When color button is clicked...
 $(".color").click(function() {
-  // assign each named color a random number 0-255
   var red = Math.floor(Math.random() * 255);
   var green = Math.floor(Math.random() * 255);
   var blue = Math.floor(Math.random() * 255);
-
-//Generate an RGBA value from red, green, and blue blah blah 
-  var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
-  
- //randomRGBA is the RGBA value that will be put intoyour css to change the screen's background color
- $("body").css("background", randomRGBA);
-  //alert(randomRGBA);
+  alert(red + "," + green + "," + blue);
 });
-// random comment
+
+ $("body").css("background", randomRGBA);
+});
+
 $(".moves").click(function() {
   $("img").toggle();
 });
-
-</script>
-</body>
-
